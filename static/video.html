@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1/font/bootstrap-icons.css">
+
+    <title>清华大学云盘 Remake</title>
+</head>
+
+<body>
+    <header class="py-2 border-bottom">
+        <div class="d-flex flex-wrap px-3 py-2">
+            <span class="d-flex align-items-center me-auto">
+                <a class="link-dark text-decoration-none mx-2" href="https://gitee.com/Futrime/tsinghua-cloud-remake"
+                    target="_blank">
+                    <img class="tcr-logo me-1 align-bottom">
+                    <span class="fs-5">清华大学云盘 Remake</span>
+                </a>
+            </span>
+            <span class="d-flex align-items-center mb-0 text-dark text-decoration-none">
+                <a target="_blank" href="/profile/" class="mx-2">
+                    <img class="rounded-circle tcr-avatar">
+                </a>
+                <a href="#" title="视频动态" class="bi-activity mx-2 fs-5 align-baseline link-dark tcr-activity-button"
+                    hidden></a>
+                <a href="#" title="收藏夹" class="bi-star mx-2 fs-5 align-baseline link-dark tcr-collection-button"
+                    hidden></a>
+                <a href="#" title="历史记录"
+                    class="bi-clock-history mx-2 fs-5 align-baseline link-dark tcr-history-button"></a>
+                <a href="https://learn.tsinghua.edu.cn/" target="_blank" title="网络学堂"
+                    class="bi-book mx-2 fs-5 align-baseline link-dark"></a>
+                <a href="/my-libs/" target="_blank" title="我的资料库" class="bi-hdd mx-2 fs-5 align-baseline link-dark"></a>
+                <a href="#" title="插件设置" class="bi-boxes mx-2 fs-5 align-baseline link-dark tcr-widget-button"></a>
+                <a href="#"
+                    class="bi-upload mx-3 px-3 py-1 align-baseline bg-primary rounded-3 text-decoration-none link-light tcr-publish-button"
+                    hidden>&nbsp;投稿</a>
+            </span>
+        </div>
+    </header>
+    <main class="d-flex mt-4 mx-auto">
+        <article class="me-4">
+            <div class="mb-1 fs-5 tcr-title"></div>
+            <div class="mb-3 text-secondary tcr-subtitle">
+                <span class="tcr-view-count">?</span>&nbsp;播放&nbsp;&nbsp;总弹幕数&nbsp;<span
+                    class="tcr-danmaku-count"></span>&nbsp;&nbsp;<span class="tcr-publish-time"></span>
+            </div>
+            <div class="tcr-player w-100"></div>
+            <div class="tcr-toolbar mt-3">
+                <a href="#" title="点赞" class="tcr-like-button text-decoration-none link-dark me-5" hidden>
+                    <span class="bi-hand-thumbs-up-fill fs-3 me-2 align-middle tcr-icon"></span>
+                    <span class="align-middle tcr-like-count">?</span>
+                </a>
+                <a href="#" title="收藏" class="tcr-collect-button text-decoration-none link-dark me-5" hidden>
+                    <span class="bi-star-fill fs-3 me-2 align-middle tcr-icon"></span>
+                    <span class="align-middle tcr-collect-count">?</span>
+                </a>
+                <a title="下载" class="tcr-download-button text-decoration-none link-dark me-5">
+                    <span class="bi-file-earmark-arrow-down-fill fs-3 me-2 align-middle tcr-icon"></span>
+                    <span class="align-middle tcr-download-count">?</span>
+                </a>
+            </div>
+            <div class="tcr-comments w-100 mt-3"></div>
+        </article>
+        <aside>
+            <div class="w-100 overflow-auto p-3 mb-3 d-flex tcr-publisher-info">
+                <img src="https://cloud.tsinghua.edu.cn/media/avatars/default.png" class="rounded-circle tcr-avatar">
+                <div class="ms-3 w-75">
+                    <div>
+                        <strong><a href="#" class="me-2 text-decoration-none link-secondary tcr-name">?</a></strong>
+                        <a href="mailto:" class="link-secondary text-decoration-none tcr-email-button" hidden>
+                            <small class="bi-envelope">&nbsp;发邮件</small>
+                        </a>
+                    </div>
+                    <button
+                        class="btn btn-outline-secondary btn-sm w-75 p-0 text-secondary mt-3 tcr-subscribe-button-disabled"
+                        disabled>
+                        <span class="bi-plus-lg me-2"></span>
+                        关注
+                        <span class="ms-1 tcr-subscribe-count"></span>
+                    </button>
+                    <button class="btn btn-primary btn-sm text-light w-75 p-0 mt-3 tcr-subscribe-button" hidden>
+                        <span class="bi-plus-lg me-2"></span>
+                        关注
+                        <span class="ms-1 tcr-subscribe-count"></span>
+                    </button>
+                    <button class="btn btn-secondary btn-sm w-75 p-0 mt-3 tcr-subscribe-button-subscribed" hidden>
+                        取消关注
+                        <span class="ms-1 tcr-subscribe-count"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="w-100 overflow-auto border p-1 mb-3 tcr-danmaku-list">
+                <div class="py-1 px-2 d-flex justify-content-between">
+                    <span>弹幕列表</span>
+                    <a class="text-decoration-none link-secondary bi-list" data-bs-toggle="collapse"
+                        href="#tcr-danmaku-list-collapse"></a>
+                </div>
+                <div class="border-top mt-2 px-2 w-100 overflow-hidden collapse" id="tcr-danmaku-list-collapse">
+                    <div class="row w-100">
+                        <div class="col-3 pe-0">
+                            <small class="text-secondary">时间</small>
+                        </div>
+                        <div class="col-6 pe-0">
+                            <small class="text-secondary">弹幕内容</small>
+                        </div>
+                        <div class="col-3 pe-0">
+                            <small class="text-secondary">发送者</small>
+                        </div>
+                    </div>
+                    <div class="d-grid w-100 overflow-auto vh-50 tcr-list">
+                        <div class="row w-100 tcr-unit">
+                            <div class="col-3 pe-0 overflow-hidden">
+                                <small class="text-nowrap tcr-time"></small>
+                            </div>
+                            <div class="col-6 pe-0 overflow-hidden">
+                                <small class="text-nowrap tcr-text">弹幕装填中……</small>
+                            </div>
+                            <div class="col-3 pe-0 overflow-hidden">
+                                <small class="text-nowrap tcr-author"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 overflow-auto border p-1 tcr-series-list">
+                <div class="py-1 px-2">
+                    <span>视频选集</span>
+                </div>
+                <div class="w-100 overflow-auto vh-75 tcr-list">
+                    <a class="row w-90 mx-auto text-decoration-none text-dark py-2 tcr-unit">
+                        <div class="col-2 pe-0 overflow-hidden">
+                            <small class="text-nowrap tcr-no"></small>
+                        </div>
+                        <div class="col-9 pe-0 overflow-hidden">
+                            <small class="text-nowrap tcr-text">加载中……</small>
+                        </div>
+                        <div class="col-1 pe-0 overflow-hidden">
+                            <small class="text-nowrap spinner-grow-sm tcr-status" hidden></small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="position-fixed top-0 end-0 p-3 tcr-float-container-top-end">
+                <div class="toast tcr-widget">
+                    <div class="toast-header">
+                        <span class="bi-boxes me-2"></span>
+                        <span class="me-auto">插件设置（刷新生效）</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                    </div>
+                    <div class="toast-body overflow-auto tcr-list">
+                        <div class="py-2 mx-auto tcr-unit" data-tcr-widget-id="" hidden>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input tcr-switch" type="checkbox">
+                                <label class="form-check-label tcr-name"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="toast tcr-activity">
+                    <div class="toast-header">
+                        <span class="bi-activity me-2"></span>
+                        <span class="me-auto">视频动态</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                    </div>
+                    <div class="toast-body overflow-auto tcr-list">
+                        <div class="py-2 mx-auto tcr-unit" hidden>
+                            <a class="text-decoration-none link-dark h-100 w-100">
+                                <div class="row h-100 w-100">
+                                    <div class="col-2 h-100 p-1">
+                                        <img src="https://cloud.tsinghua.edu.cn/media/avatars/default.png"
+                                            class="rounded-circle">
+                                    </div>
+                                    <div class="col-10 d-flex flex-column justify-content-center">
+                                        <span class="text-secondary tcr-publisher"></span><br>
+                                        <div class="text-dark fs-5 text-break text-wrap tcr-name overflow-hidden"></div>
+                                        <small class="text-muted tcr-time"></small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="toast tcr-collection">
+                    <div class="toast-header">
+                        <span class="bi-star me-2"></span>
+                        <span class="me-auto">收藏夹</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                    </div>
+                    <div class="toast-body overflow-auto tcr-list">
+                        <div class="py-2 mx-auto tcr-unit" hidden>
+                            <a class="text-decoration-none link-dark h-100 w-100">
+                                <div class="row h-100 w-100">
+                                    <div class="col-2 h-100 p-1">
+                                        <img src="https://cloud.tsinghua.edu.cn/media/avatars/default.png"
+                                            class="rounded-circle">
+                                    </div>
+                                    <div class="col-10 d-flex flex-column justify-content-center">
+                                        <span class="text-secondary tcr-publisher"></span><br>
+                                        <div class="text-dark fs-5 text-break text-wrap tcr-name overflow-hidden"></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="toast tcr-history">
+                    <div class="toast-header">
+                        <span class="bi-clock-history me-2"></span>
+                        <span class="me-auto">历史记录</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                    </div>
+                    <div class="toast-body overflow-auto tcr-list">
+                        <div class="my-1 mx-auto tcr-unit" hidden>
+                            <a class="text-decoration-none h-100 w-100">
+                                <div class="row h-100 w-100">
+                                    <div class="col-5 h-100 p-1">
+                                        <img class="rounded-3">
+                                    </div>
+                                    <div class="col-7 d-flex flex-column justify-content-center">
+                                        <div class="text-dark tcr-name"></div>
+                                        <div>
+                                            <small class="text-muted bi-clock tcr-date"></small><br>
+                                            <small class="text-muted bi-person tcr-publisher"></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="position-fixed bottom-0 end-0 p-3 tcr-float-container-bottom-end"></div>
+        </aside>
+    </main>
+    <div class="position-fixed top-0 start-0 vh-100 vw-100 bg-opacity-75 bg-light tcr-loading-mask">
+        <div class="h-100 w-100 d-flex">
+            <span class="m-auto spinner-border text-primary"></span>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2/js/md5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/nplayer@1.0.9/dist/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@nplayer/danmaku@1/dist/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js"></script>
+    <script class="tcr-init" defer>
+        /*
+         * Page initialization
+         */
+        const config = {
+            staticURL: document.querySelector('meta[data-tcr-static-url]').getAttribute('data-tcr-static-url'),
+            backendURL: document.querySelector('meta[data-tcr-backend-url]').getAttribute('data-tcr-backend-url'),
+            widgetIndex: JSON.parse(
+                document.querySelector('meta[data-tcr-widget-index]').getAttribute('data-tcr-widget-index')
+            )
+        };
+
+        (() => { // avoid global variables
+            let cssNode = document.createElement('link');
+            cssNode.setAttribute('rel', 'stylesheet');
+            cssNode.setAttribute('href', config.staticURL + '/css/video.css');
+            document.querySelector('head').append(cssNode);
+
+            let iconNode = document.createElement('link');
+            iconNode.setAttribute('rel', 'icon');
+            iconNode.setAttribute('href', config.staticURL + '/img/favicon.ico');
+            document.querySelector('head').append(iconNode);
+
+            let jsNode = document.createElement('script');
+            jsNode.setAttribute('src', config.staticURL + '/js/video.js');
+            document.querySelector('body').append(jsNode);
+
+            document.querySelector('.tcr-init').remove(); // remove codes for initialization
+        })();
+    </script>
+</body>
+
+</html>

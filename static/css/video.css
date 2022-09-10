@@ -1,0 +1,135 @@
+body {
+    min-width: 992px;
+}
+
+header .tcr-logo {
+    height: 30px;
+}
+
+header .tcr-avatar {
+    height: 30px;
+}
+
+header .tcr-mylib-button,
+header .tcr-mylib-button:hover {
+    color: white;
+}
+
+main {
+    width: 1140px;
+    max-width: 90%;
+}
+
+article {
+    width: 70%;
+}
+
+.tcr-subtitle {
+    font-size: small;
+}
+
+.tcr-comments .vinput,
+.tcr-comments .vcontent * {
+    color: black !important;
+}
+
+aside {
+    width: 30%;
+}
+
+.tcr-publisher-info>.tcr-avatar {
+    height: 60px;
+    width: 60px;
+}
+
+.tcr-publisher-info .tcr-subscribe-button,
+.tcr-publisher-info .tcr-subscribe-button-disabled,
+.tcr-publisher-info .tcr-subscribe-button-subscribed {
+    height: 25px;
+    max-width: 120px;
+}
+
+.tcr-danmaku-list .tcr-list {
+    max-height: 50vh;
+}
+
+.tcr-danmaku-list small {
+    font-size: 13px;
+}
+
+.tcr-series-list .tcr-list{
+    min-height: 25vh;
+    max-height: 75vh;
+}
+
+.tcr-float-container-top-end,
+.tcr-float-container-bottom-end {
+    z-index: 100000;
+}
+
+.tcr-widget {
+    min-height: 75vh;
+}
+
+.tcr-widget>.tcr-list>.tcr-unit {
+    width: 90%;
+}
+
+.tcr-activity {
+    min-height: 75vh;
+}
+
+.tcr-activity>.tcr-list>.tcr-unit {
+    width: 90%;
+}
+
+.tcr-activity>.tcr-list>.tcr-unit img {
+    height: 30px;
+}
+
+.tcr-activity>.tcr-list>.tcr-unit small {
+    font-size: small;
+}
+
+.tcr-activity>.tcr-list>.tcr-unit .tcr-name{
+    max-height: 200px;
+}
+
+.tcr-collection {
+    min-height: 75vh;
+}
+
+.tcr-collection>.tcr-list>.tcr-unit {
+    width: 90%;
+}
+
+.tcr-collection>.tcr-list>.tcr-unit img {
+    height: 30px;
+}
+
+.tcr-collection>.tcr-list>.tcr-unit small {
+    font-size: small;
+}
+
+.tcr-collection>.tcr-list>.tcr-unit .tcr-name{
+    max-height: 200px;
+}
+
+.tcr-history {
+    min-height: 75vh;
+}
+
+.tcr-history>.tcr-list>.tcr-unit {
+    height: 90px;
+    width: 90%;
+}
+
+.tcr-history>.tcr-list>.tcr-unit img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.tcr-loading-mask {
+    z-index: 114514;
+}
